@@ -1,18 +1,22 @@
-# @inexor-game/interface
+# inexor-ui
 
-> The Inexor user interface
+> ingame UI
 
 ## Build Setup
 
 ``` bash
 # install dependencies
-npm install
+$ yarn install
 
-# serve with hot reload at localhost:8080
-npm run dev
+# serve with hot reload at localhost:3000
+$ yarn run dev
 
-# build for production with minification
-npm run build
+# build for production and launch server
+$ yarn run build
+$ yarn start
+
+# generate static project
+$ yarn run generate
 ```
 
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
