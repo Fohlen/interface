@@ -45,24 +45,33 @@ View the full documentation at https://tailwindcss.com.
 */
 
 let colors = {
-    'transparent': 'transparent',
+    transparent: 'transparent',
+    background: 'rgba(0, 0, 0, .5)',
 
-    'black': '#22292f',
-    'grey-darkest': '#3d4852',
-    'grey-darker': '#606f7b',
-    'grey-dark': '#8795a1',
-    'grey': '#b8c2cc',
-    'grey-light': '#dae1e7',
-    'grey-lighter': '#f1f5f8',
-    'grey-lightest': '#f8fafc',
-    'white': '#ffffff',
+    black: '#22292f',
+    'gray-darkest': '#3d4852',
+    'gray-darker': '#606f7b',
+    'gray-dark': '#8795a1',
+    gray: '#b8c2cc',
+    'gray-light': '#dae1e7',
+    'gray-lighter': '#f1f5f8',
+    'gray-lightest': '#f8fafc',
+    white: '#ffffff',
 
-    'background': 'rgba(255, 255, 255, .25)',
+    'black-faded': 'rgba(13.3%, 16.1%, 18.4%, .75)',
+    'gray-darkest-faded': 'rgba(23.9%, 28.2%, 32.2%, .75)',
+    'gray-darker-faded': 'rgba(37.6%, 43.5%, 48.2%, .75)',
+    'gray-dark-faded': 'rgba(52.9%, 58.4%, 63.1%, .75)',
+    'gray-faded': 'rgba(72.2%, 76.1%, 80%, .75)',
+    'gray-light-faded': 'rgba(85.5%, 88.2%, 90.6%, .75)',
+    'gray-lighter-faded': 'rgba(94.5%, 96.1%, 97.3%, .75)',
+    'gray-lightest-faded': 'rgba(97.3%, 98%, 98.8%, .75)',
+    'white-faded': 'rgba(100%, 100%, 100%, .75)',
 
     'red-darkest': '#3b0d0c',
     'red-darker': '#621b18',
     'red-dark': '#cc1f1a',
-    'red': '#e3342f',
+    red: '#e3342f',
     'red-light': '#ef5753',
     'red-lighter': '#f9acaa',
     'red-lightest': '#fcebea',
@@ -70,7 +79,7 @@ let colors = {
     'orange-darkest': '#462a16',
     'orange-darker': '#613b1f',
     'orange-dark': '#de751f',
-    'orange': '#f6993f',
+    orange: '#f6993f',
     'orange-light': '#faad63',
     'orange-lighter': '#fcd9b6',
     'orange-lightest': '#fff5eb',
@@ -78,7 +87,7 @@ let colors = {
     'yellow-darkest': '#453411',
     'yellow-darker': '#684f1d',
     'yellow-dark': '#f2d024',
-    'yellow': '#ffed4a',
+    yellow: '#ffed4a',
     'yellow-light': '#fff382',
     'yellow-lighter': '#fff9c2',
     'yellow-lightest': '#fcfbeb',
@@ -86,50 +95,34 @@ let colors = {
     'green-darkest': '#0f2f21',
     'green-darker': '#1a4731',
     'green-dark': '#1f9d55',
-    'green': '#38c172',
+    green: '#38c172',
     'green-light': '#51d88a',
     'green-lighter': '#a2f5bf',
     'green-lightest': '#e3fcec',
 
-    'teal-darkest': '#0d3331',
-    'teal-darker': '#20504f',
-    'teal-dark': '#38a89d',
-    'teal': '#4dc0b5',
-    'teal-light': '#64d5ca',
-    'teal-lighter': '#a0f0ed',
-    'teal-lightest': '#e8fffe',
-
     'blue-darkest': '#12283a',
     'blue-darker': '#1c3d5a',
     'blue-dark': '#2779bd',
-    'blue': '#3490dc',
+    blue: '#3490dc',
     'blue-light': '#6cb2eb',
     'blue-lighter': '#bcdefa',
     'blue-lightest': '#eff8ff',
 
-    'indigo-darkest': '#191e38',
-    'indigo-darker': '#2f365f',
-    'indigo-dark': '#5661b3',
-    'indigo': '#6574cd',
-    'indigo-light': '#7886d7',
-    'indigo-lighter': '#b2b7ff',
-    'indigo-lightest': '#e6e8ff',
-
     'purple-darkest': '#21183c',
     'purple-darker': '#382b5f',
     'purple-dark': '#794acf',
-    'purple': '#9561e2',
+    purple: '#9561e2',
     'purple-light': '#a779e9',
     'purple-lighter': '#d6bbfc',
     'purple-lightest': '#f3ebff',
 
-    'pink-darkest': '#451225',
-    'pink-darker': '#6f213f',
-    'pink-dark': '#eb5286',
-    'pink': '#f66d9b',
-    'pink-light': '#fa7ea8',
-    'pink-lighter': '#ffbbca',
-    'pink-lightest': '#ffebef',
+    'purple-darkest-faded': 'rgba(33, 24, 60, 0.75)',
+    'purple-darker-faded': 'rgba(56, 43, 95, 0.75)',
+    'purple-dark-faded': 'rgba(121, 74, 207, 0.75)',
+    'purple-faded': 'rgba(149, 97, 226, 0.75)',
+    'purple-light-faded': 'rgba(167, 121, 233, 0.75)',
+    'purple-lighter-faded': 'rgba(214, 187, 252, 0.75)',
+    'purple-lightest-faded': 'rgba(243, 235, 255, 0.75)'
 }
 
 module.exports = {
@@ -422,7 +415,7 @@ module.exports = {
   |
   */
 
-    borderColors: global.Object.assign({ default: colors['grey-light'] }, colors),
+    borderColors: global.Object.assign({ default: colors['gray-light'] }, colors),
 
 
     /*
