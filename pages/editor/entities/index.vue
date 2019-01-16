@@ -15,30 +15,39 @@
                 Relationships
             </div>
         </div>
+        <div class="flex flex-wrap">
+            <div class="w-1/2">
+                <h2 class="my-4">Entity Types</h2>
+                <button class="button" @click="addEntityType">Add EntityType</button>
+                <div v-for="entityType in entityTypes" :key="entityType.entity_type_uuid" class="my-2">
+                    <input v-model="entityType.name" type="text" >
+                    <pre>{{ entityType }}</pre>
+                </div>
+            </div>
 
-        <h2 class="my-4">Entity Types</h2>
-        <!-- <input type="text" v-model=""> -->
-        <button class="button" @click="addEntityType">Add EntityType</button>
-        <div v-for="entityType in entityTypes" :key="entityType.entity_type_uuid">
-            <pre>{{ entityType }}</pre>
-        </div>
+            <div class="w-1/2">
+                <h2 class="my-4">Entities</h2>
+                <button class="button" @click="addEntity">Add Entity</button>
+                <div v-for="entity in entities" :key="entity.entity_instance_uuid" class="my-2">
+                    <pre>{{ entity }}</pre>
+                </div>
+            </div>
 
-        <h2 class="my-4">Entities</h2>
-        <button class="button" @click="addEntity">Add Entity</button>
-        <div v-for="entity in entities" :key="entity.entity_instance_uuid">
-            <pre>{{ entity }}</pre>
-        </div>
+            <div class="w-1/2">
+                <h2 class="my-4">Relationship Types</h2>
+                <button class="button" @click="addRelationshipType">Add RelationshipType</button>
+                <div v-for="relationshipType in relationshipTypes" :key="relationshipType.relationship_type_uuid" class="my-2">
+                    <pre>{{ relationshipType }}</pre>
+                </div>
+            </div>
 
-        <h2 class="my-4">Relationship Types</h2>
-        <button class="button" @click="addRelationshipType">Add RelationshipType</button>
-        <div v-for="relationshipType in relationshipTypes" :key="relationshipType.relationship_type_uuid">
-            <pre>{{ relationshipType }}</pre>
-        </div>
-
-        <h2 class="my-4">Relationships</h2>
-        <button class="button" @click="addRelationship">Add Relationship</button>
-        <div v-for="relationship in relationships" :key="relationship.relationship_instance_uuid">
-            <pre>{{ relationship }}</pre>
+            <div class="w-1/2">
+                <h2 class="my-4">Relationships</h2>
+                <button class="button" @click="addRelationship">Add Relationship</button>
+                <div v-for="relationship in relationships" :key="relationship.relationship_instance_uuid" class="my-2">
+                    <pre>{{ relationship }}</pre>
+                </div>
+            </div>
         </div>
 
     </div>
