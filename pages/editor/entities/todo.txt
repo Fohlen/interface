@@ -1,0 +1,20 @@
+- Entity System UI (Misan / Fohlen / Hanack)
+    - Toolbar
+        - Clear Entity System (Clear)
+        - Load Entity System from JSON (Clear+Load)
+        - Load additional JSON (Load only)
+        - Save Entity System as JSON
+    - Tabs / ListViews
+        - List Entity Types
+        - List Entity Instances
+        - List Relationship Types
+        - List Relationship Instances
+    - CRUD
+        - CRUD Entity Types
+        - CRUD Entity Instances
+        - CRUD Relationship Types
+        - CRUD Relationship Instances
+    - Visualisation as Graph using sigma.js
+        - Entity Types & Relationship Types ( a.k.a. Inexor Type System )
+        - Entity Instances & Relationship Instances ( a.k.a. Inexor Game State )
+        - both
