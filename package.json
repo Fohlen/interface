@@ -13,6 +13,7 @@
     "start": "nuxt start"
   },
   "dependencies": {
+    "@nuxtjs/vuetify": "^0.5.5",
     "cross-env": "^5.2.0",
     "keen-ui": "^1.1.0",
     "nuxt": "^2.3.4",

@@ -1,6 +1,4 @@
 const pkg = require('./package')
-const nodeExternals = require('webpack-node-externals')
-const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
 
 module.exports = {
     mode: 'universal',
@@ -36,13 +34,14 @@ module.exports = {
     ** Plugins to load before mounting the App
     */
     plugins: [
-        {src:'~/plugins/keen', ssr: false},
+        // {src:'~/plugins/keen', ssr: false},
     ],
 
     /*
     ** Nuxt.js modules
     */
     modules: [
+        '@nuxtjs/vuetify',
     ],
 
     /*
