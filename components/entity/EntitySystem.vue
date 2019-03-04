@@ -13,7 +13,7 @@
                         <button class="button ml-4" @click="remove('entityTypes', entityType.entity_type_uuid, 'entity_type_uuid')">&times;</button>
                     </div>
                     <button class="button" @click="addAttribute(entityType)">Add Attribute</button>
-                    <EntityAttribute v-for="attribute in entityType.attributes" :key="attribute.uuid" :value="attribute" @input="attribute = $event" />
+                    <EntityAttribute v-for="attribute in entityType.attributes" :key="attribute.uuid" :value="attribute" @input="attribute = $event" @remove="removeAttribute(entityType, attribute)" />
                     <pre>{{ entityType }}</pre>
                 </div>
             </div>
@@ -36,7 +36,7 @@
                         <button class="button ml-4" @click="remove('entities', entity.entity_instance_uuid, 'entity_instance_uuid')">&times;</button>
                     </div>
                     <button class="button" @click="addAttribute(entity)">Add Attribute</button>
-                    <EntityAttribute v-for="attribute in entity.attributes" :key="attribute.uuid" />
+                    <EntityAttribute v-for="attribute in entity.attributes" :key="attribute.uuid" @remove="removeAttribute(entity, attribute)" />
                     <pre>{{ entity }}</pre>
                 </div>
             </div>
@@ -66,7 +66,7 @@
                         label="End Node Type"
                     />
                     <button class="button" @click="addAttribute(relationshipType)">Add Attribute</button>
-                    <EntityAttribute v-for="attribute in relationshipType.attributes" :key="attribute.uuid" />
+                    <EntityAttribute v-for="attribute in relationshipType.attributes" :key="attribute.uuid" @remove="removeAttribute(relationshipType, attribute)" />
                     <pre>{{ relationshipType }}</pre>
                 </div>
             </div>
@@ -105,7 +105,7 @@
                         />
                     </div>
                     <button class="button" @click="addAttribute(relationship)">Add Attribute</button>
-                    <EntityAttribute v-for="attribute in relationship.attributes" :key="attribute.uuid" />
+                    <EntityAttribute v-for="attribute in relationship.attributes" :key="attribute.uuid" @remove="removeAttribute(relationship, attribute)" />
                     <pre>{{ relationship }}</pre>
                 </div>
             </div>
@@ -184,9 +184,6 @@ export default {
         // this.entities.push(create.Entity({name: 'Teledest'}))
     },
     methods: {
-        availableEntityTypes(item, queryText, itemText) {
-            return true
-        },
         availableRelationStartEntities(entity, relationship) {
             const relationshipType = this.findRelationshipTypeByUUID(relationship.relationship_type_uuid)
             const checkEntityType = this.findEntityTypeByUUID(entity.entity_type_uuid)
@@ -212,6 +209,10 @@ export default {
             let index = this[pool].findIndex(object => object[field] == uuid)
             this[pool].splice(index, 1)
         },
+        removeAttribute(pool, { uuid }) {
+            let index = pool.attributes.findIndex(attribute => attribute.uuid == uuid)
+            pool.attributes.splice(index, 1)
+        }
     }
 }
 </script>

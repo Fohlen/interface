@@ -28,44 +28,38 @@ export default {
                 attribute_uuid: '',
                 name: '',
                 datatype: '',
-                value: '',
+                value: null,
             })
         },
     },
     data: () => ({
-        dataTypes: [
+        datatypes: [
             {
                 name: 'Integer',
-                type: 'number'
             },
             {
                 name: 'Float',
-                type: 'number'
             },
             {
                 name: 'String',
-                type: 'text'
             },
             {
                 name: 'Boolean',
-                type: 'checkbox'
             },
             {
                 name: 'Vector 3',
-                type: 'number'
             },
             {
                 name: 'Vector 4',
-                type: 'number'
             },
         ]
     }),
     computed: {
         dataTypeNames() {
-            return this.dataTypes.map(dataType => dataType.name)
+            return this.datatypes.map(datatype => datatype.name)
         },
         selectedDataType() {
-            return this.dataTypes.find(dataType => this.value.dataType == dataType.name)
+            return this.datatypes.find(datatype => this.value.datatype == datatype.name)
         }
     }
 
