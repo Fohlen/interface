@@ -321,6 +321,7 @@ module.exports = {
         'tight': '-0.05em',
         'normal': '0',
         'wide': '0.05em',
+        'wider': '0.1em',
     },
 
 
@@ -925,6 +926,34 @@ module.exports = {
             // center: true,
             // padding: '1rem',
         }),
+        function({ addUtilities }) {
+            addUtilities({
+                '.scale': {
+                    transform: 'scale(1.05)',
+                },
+                '.scale-lg': {
+                    transform: 'scale(1.1)',
+                },
+                '.scale-xl': {
+                    transform: 'scale(1.2)',
+                },
+            }, {
+                variants: ['hover']
+            })
+        },
+        function ({ addUtilities }) {
+            addUtilities({
+                '.transition': {
+                    transition: 'all .1s ease',
+                },
+                '.transition-lg': {
+                    transition: 'all .25s ease',
+                },
+                '.transition-xl': {
+                    transition: 'all .5s ease',
+                },
+            })
+        }
     ],
 
 
