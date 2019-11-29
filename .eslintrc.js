@@ -21,5 +21,7 @@ module.exports = {
         'indent': [1, 4],
         'vue/html-indent': [1, 4],
         'vue/max-attributes-per-line': 0,
+        'vue/require-default-prop': 0,
+        'vue/attributes-order': 0,
     }
 }
