@@ -926,7 +926,7 @@ module.exports = {
             // center: true,
             // padding: '1rem',
         }),
-        function({ addUtilities }) {
+        ({ addUtilities }) => {
             addUtilities({
                 '.scale': {
                     transform: 'scale(1.05)',
@@ -941,7 +941,7 @@ module.exports = {
                 variants: ['hover']
             })
         },
-        function ({ addUtilities }) {
+        ({ addUtilities }) => {
             addUtilities({
                 '.transition': {
                     transition: 'all .1s ease',
@@ -953,7 +953,27 @@ module.exports = {
                     transition: 'all .5s ease',
                 },
             })
-        }
+        },
+        ({ addUtilities }) => {
+            addUtilities({
+                '.text-shadow-dark': {
+                    textShadow: `
+                        0 1px 2px hsla(0, 0%, 0%, .5),
+                        0 -1px 2px hsla(0, 0%, 0%, .5),
+                        1px 0 3px hsla(0, 0%, 0%, .5),
+                        -1px 0 4px hsla(0, 0%, 0%, .5)
+                    `
+                },
+                '.text-shadow-border': {
+                    textShadow: `
+                        1px 0 0 hsla(0, 100%, 0, .5),
+                        0 1px 0 hsla(0, 100%, 0, .5),
+                        -1px 0 0 hsla(0, 100%, 0, .5),
+                        0 -1px 0 hsla(0, 100%, 0, .5)
+                    `,
+                },
+            })
+        },
     ],
 
 

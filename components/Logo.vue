@@ -1,5 +1,5 @@
 <template>
-    <h1 class="flex items-center">
+    <h1 class="flex items-center text-shadow-dark">
         <img src="~/assets/images/logo.png" class="mr-8 w-24">
         <div class="text-left flex flex-col uppercase text-white">
             <span class="tracking-wider">Inexor</span>
@@ -11,9 +11,5 @@
 </template>
 
 <style lang="stylus" scoped>
-    h1
-        text-shadow 0 1px 2px hsla(0, 0%, 0%, .5),
-            0 -1px 2px hsla(0, 0%, 0%, .5),
-            1px 0 3px hsla(0, 0%, 0%, .5),
-            -1px 0 4px hsla(0, 0%, 0%, .5)
+
 </style>

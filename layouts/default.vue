@@ -1,11 +1,21 @@
 <template>
     <div>
-        <img class="bg-image" src="~assets/images/averas.jpg" alt="">
+        <img class="bg-image pin-r pin-t absolute" src="~assets/images/averas.jpg" alt="">
         <div class="relative">
             <nuxt/>
         </div>
     </div>
 </template>
+
+<script>
+export default {
+    computed: {
+        loggedIn() {
+            return false
+        }
+    }
+}
+</script>
 
 <style lang="stylus">
     html, body

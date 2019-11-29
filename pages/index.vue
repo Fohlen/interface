@@ -8,16 +8,47 @@
             <nuxt-link class="bg-background no-underline my-2 p-4 text-white transition hover:scale" to="/">
                 <h3 class="text-lg mb-2">Multiplayer</h3>
                 <div class="flex">
-                    <div v-for="map in 3" :key="map" class="bg-background w/1-3 p-8 mr-4">
-                        Xenon
+                    <MapCard v-for="server in servers" :key="server.id" :map="server.map" class="w-1/3">
+                        <span class="text-xs">({{ server.players }} / {{ server.maxPlayers }})</span> {{ server.name }}
+                    </MapCard>
+                    <div class="p-2 relative overflow-hidden flex-grow">
+                        <div class="bg-background transition hover:scale relative flex h-full">
+                            <div class="bg-background p-2 mt-16 self-end relative w-full">
+                                <strong class="block text-purple text-shadow-dark">More servers</strong>
+                                <span class="text-xs">Online games</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <button class="button button--primary button--outline mt-4">
+                    Matchmaking
+                </button>
             </nuxt-link>
-            <nuxt-link class="bg-background no-underline my-2 p-4 text-white transition hover:scale" to="editor/entities">
+            <!-- <nuxt-link class="bg-background no-underline my-2 p-4 text-white transition hover:scale" to="editor/entities">
                 <h3 class="text-lg mb-2">Entities</h3>
-            </nuxt-link>
+            </nuxt-link> -->
             <nuxt-link class="bg-background no-underline my-2 p-4 text-white transition hover:scale" to="assets">
                 <h3 class="text-lg mb-2">Assets</h3>
+                <p>
+                    Manage textures, maps and models
+                </p>
+            </nuxt-link>
+            <nuxt-link class="bg-background no-underline my-2 p-4 text-white transition hover:scale flex" to="user">
+                <UserAvatar v-if="loggedIn" :label="true" :user="{ username: 'Misan', avatar: '' }">
+                    <div>10 maps created</div>
+                </UserAvatar>
+                <div v-else>
+                    <h3 class="text-lg">User Account</h3>
+                    <button class="button button--primary button--outline mt-4">
+                        Login
+                    </button>
+                    <p class="mt-2 text-sm">
+                        With an account, you can publish maps, save statistics about matches and more
+                    </p>
+                </div>
+                <!-- <div>
+                    Clan
+                </div> -->
             </nuxt-link>
         </div>
     </div>
@@ -25,7 +56,38 @@
 
 <script>
 import Logo from '~/components/Logo'
+import UserAvatar from '~/components/user/UserAvatar'
+import MapCard from '~/components/MapCard'
 export default {
-    components: { Logo }
+    components: { Logo, MapCard, UserAvatar },
+    computed: {
+        loggedIn() {
+            return false
+        },
+        servers() {
+            return [
+                {
+                    id: 1,
+                    name: 'Mapping Hell',
+                    map: {
+                        name: 'Averas',
+                        preview: require('~/assets/images/averas.jpg')
+                    },
+                    players: 5,
+                    maxPlayers: 10,
+                },
+                {
+                    id: 2,
+                    name: 'Riggatoni',
+                    map: {
+                        name: 'Flagstone',
+                        preview: require('~/assets/images/flagstone.jpg')
+                    },
+                    players: 17,
+                    maxPlayers: 32,
+                },
+            ]
+        }
+    }
 }
 </script>
