@@ -21,13 +21,20 @@
 @tailwind components;
 
 
-.button {
-    @apply bg-purple text-white py-2 px-4 rounded border-b-2 border-purple-dark
-}
+.button
+    @apply bg-purple-dark text-white py-2 px-4 rounded border-b-2 border-purple-darker transition-lg
+    &:hover
+        @apply bg-purple border-purple-dark
 
 .responsive
     max-width 100%
     height auto
+
+.avatar
+    @apply rounded-full shadow-md border-2 border-yellow bg-black
+    width 2em
+    height 2em
+    object-fit cover
 
 /**
  * Here you would add any of your custom component classes; stuff that you'd
