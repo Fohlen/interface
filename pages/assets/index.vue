@@ -1,9 +1,23 @@
 <template>
-    <div>
+    <div class="h-full">
         <DialogFrame v-model="showTextureDialog">
             <img :src="`https://picsum.photos/id/${selectedTexture}/800/800`" class="responsive" alt="">
         </DialogFrame>
-        <div class="flex flex-wrap">
+        <div class="container mx-auto py-8 flex justify-between">
+            <nuxt-link to="/" class="no-underline">
+                <Logo small label="Editor | Assets Manager" />
+            </nuxt-link>
+        </div>
+        <Tabs class="container mx-auto">
+            <div slot="tabs" class="flex">
+                <TabLink to="/">Entities</TabLink>
+                <TabLink to="/">Models</TabLink>
+                <TabLink to="/">Textures</TabLink>
+                <TabLink to="/">Maps</TabLink>
+                <TabLink to="/">Prefabs</TabLink>
+            </div>
+        </Tabs>
+        <div class="container mx-auto p-8 text-white bg-background w-full flex flex-wrap">
             <div v-for="texture in 6" :key="texture" class="w-1/5">
                 <div class="bg-gray-darkest cursor-pointer p-2 m-4 rounded relative" @click="showTexture(texture)">
                     <div class="overflow-hidden relative">
@@ -20,8 +34,11 @@
 
 <script>
 import DialogFrame from '~/components/DialogFrame'
+import Logo from '~/components/Logo'
+import Tabs from '~/components/Tabs'
+import TabLink from '~/components/TabLink'
 export default {
-    components: { DialogFrame },
+    components: { DialogFrame, Logo, Tabs, TabLink },
     data: () => ({
         showTextureDialog: false,
         selectedTexture: null,
@@ -34,3 +51,9 @@ export default {
     }
 }
 </script>
+
+<style lang="stylus">
+
+
+
+</style>

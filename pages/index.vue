@@ -2,10 +2,10 @@
     <div class="container mx-auto py-16 text-white flex justify-between">
         <Logo />
         <div class="w-1/2 flex flex-col">
-            <nuxt-link class="bg-background no-underline my-2 p-4 text-white transition hover:scale" to="/">
+            <nuxt-link class="bg-background no-underline my-2 p-4 text-white transition hover:scale" to="/singleplayer">
                 <h3 class="text-lg mb-2">Singleplayer</h3>
             </nuxt-link>
-            <nuxt-link class="bg-background no-underline my-2 p-4 text-white transition hover:scale" to="/">
+            <nuxt-link class="bg-background no-underline my-2 p-4 text-white transition hover:scale" to="/servers">
                 <h3 class="text-lg mb-2">Multiplayer</h3>
                 <div class="flex">
                     <MapCard v-for="server in servers" :key="server.id" :map="server.map" class="w-1/3">
@@ -15,7 +15,7 @@
                         <div class="bg-background transition hover:scale relative flex h-full">
                             <div class="bg-background p-2 mt-16 self-end relative w-full">
                                 <strong class="block text-purple text-shadow-dark">More servers</strong>
-                                <span class="text-xs">Online games</span>
+                                <span class="text-xs">21 server online</span>
                             </div>
                         </div>
                     </div>
@@ -24,16 +24,16 @@
                     Matchmaking
                 </button>
             </nuxt-link>
-            <!-- <nuxt-link class="bg-background no-underline my-2 p-4 text-white transition hover:scale" to="editor/entities">
+            <!-- <nuxt-link class="bg-background no-underline my-2 p-4 text-white transition hover:scale" to="/editor/entities">
                 <h3 class="text-lg mb-2">Entities</h3>
             </nuxt-link> -->
-            <nuxt-link class="bg-background no-underline my-2 p-4 text-white transition hover:scale" to="assets">
+            <nuxt-link class="bg-background no-underline my-2 p-4 text-white transition hover:scale" to="/assets">
                 <h3 class="text-lg mb-2">Assets</h3>
                 <p>
                     Manage textures, maps and models
                 </p>
             </nuxt-link>
-            <nuxt-link class="bg-background no-underline my-2 p-4 text-white transition hover:scale flex" to="user">
+            <nuxt-link class="bg-background no-underline my-2 p-4 text-white transition hover:scale flex" to="/user/login">
                 <UserAvatar v-if="loggedIn" :label="true" :user="{ username: 'Misan', avatar: '' }">
                     <div>10 maps created</div>
                 </UserAvatar>
