@@ -1,7 +1,8 @@
 <template>
-    <div>
+    <div class="h-full">
         <img class="bg-image pin-r pin-t absolute" src="~assets/images/averas.jpg" alt="">
-        <div class="relative">
+        <GlobalEvents @keyup.esc="returnToMainMenu" />
+        <div class="relative h-full">
             <nuxt/>
         </div>
     </div>
@@ -13,6 +14,11 @@ export default {
         loggedIn() {
             return false
         }
+    },
+    methods: {
+        returnToMainMenu() {
+            this.$router.push('/')
+        }
     }
 }
 </script>
@@ -21,7 +27,7 @@ export default {
     html, body
         background-color black
     .bg-image
-        position fixed
+        @apply fixed h-full w-full
         filter blur(3px)
         object-fit cover
         object-position center

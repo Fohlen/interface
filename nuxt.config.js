@@ -34,6 +34,7 @@ module.exports = {
     ** Plugins to load before mounting the App
     */
     plugins: [
+        '~plugins/globalComponents'
     ],
 
     /*
@@ -41,6 +42,8 @@ module.exports = {
     */
     modules: [
     ],
+
+    pageTransition: 'page',
 
     /*
     ** Build configuration
