@@ -1,7 +1,7 @@
 const pkg = require('./package')
 
 module.exports = {
-    mode: 'universal',
+    mode: 'spa',
 
     /*
     ** Headers of the page
@@ -40,7 +40,17 @@ module.exports = {
     ** Nuxt.js modules
     */
     modules: [
+        '@nuxtjs/apollo',
     ],
+
+    apollo: {
+        clientConfigs: {
+            default: {
+                // browserHttpEndpoint: 'http://192.168.255.98:9999/graphql',
+                httpEndpoint: 'http://192.168.255.98:9999/graphql',
+            }
+        }
+    },
 
     /*
     ** Build configuration

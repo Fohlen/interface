@@ -1,0 +1,43 @@
+$tree-border = 1px solid #000
+.editor
+    @apply w-screen h-screen font-mono flex flex-col
+    background: beige
+
+.treeview-item
+    @apply w-full bg-gray text-black
+    min-height: 30px
+    line-height: 30px
+    border-top: $tree-border
+    border-left: $tree-border
+    &.indented
+        padding-left: 20px
+
+.extender
+    display: inline-block
+    padding: 0 5px
+    font-size: 10px
+    cursor: pointer
+
+.highlight-path
+    @apply bg-black text-white
+
+.tree-view
+    @apply flex-grow bg-gray overflow-y-scroll
+    height: 5rem
+    > :last-child
+        border-bottom: $tree-border
+    > :first-child
+        border-top: none
+    > .treeview-item
+        border-left: none
+
+.object-view
+    @apply overflow-y-scroll
+    max-height: 50%
+    > :last-child
+        border-bottom: $tree-border
+    > .treeview-item
+        border-left: none
+
+.command-line
+    @apply w-screen
