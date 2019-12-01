@@ -1,6 +1,6 @@
 <template>
     <div class="h-full">
-        <img class="bg-image pin-r pin-t absolute" src="~assets/images/averas.jpg" alt="">
+        <img class="home-bg-image bg-image pin-r pin-t absolute" src="~assets/images/averas.jpg" alt="">
         <GlobalEvents @keyup.esc="returnToMainMenu" />
         <div class="relative h-full">
             <nuxt/>
@@ -26,9 +26,6 @@ export default {
 <style lang="stylus">
     html, body
         background-color black
-    .bg-image
-        @apply fixed h-full w-full
+    .home-bg-image
         filter blur(3px)
-        object-fit cover
-        object-position center
 </style>

@@ -8,9 +8,9 @@
             <nuxt-link class="bg-background no-underline my-2 p-4 text-white transition hover:scale" to="/servers">
                 <h3 class="text-lg mb-2">Multiplayer</h3>
                 <div class="flex">
-                    <MapCard v-for="server in servers" :key="server.id" :map="server.map" class="w-1/3">
+                    <ImageCard v-for="server in servers" :key="server.id" :src="server.map.preview" :label="server.map.name" class="w-1/3">
                         <span class="text-xs">({{ server.players }} / {{ server.maxPlayers }})</span> {{ server.name }}
-                    </MapCard>
+                    </ImageCard>
                     <div class="p-2 relative overflow-hidden flex-grow">
                         <div class="bg-background transition hover:scale relative flex h-full">
                             <div class="bg-background p-2 mt-16 self-end relative w-full">
@@ -57,9 +57,9 @@
 <script>
 import Logo from '~/components/Logo'
 import UserAvatar from '~/components/user/UserAvatar'
-import MapCard from '~/components/MapCard'
+import ImageCard from '~/components/ImageCard'
 export default {
-    components: { Logo, MapCard, UserAvatar },
+    components: { Logo, ImageCard, UserAvatar },
     computed: {
         loggedIn() {
             return false

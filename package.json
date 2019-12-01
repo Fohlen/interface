@@ -15,6 +15,7 @@
   "dependencies": {
     "cross-env": "^5.2.0",
     "nuxt": "^2.3.4",
+    "nuxt-element-ui": "^1.0.10",
     "shortid": "^2.2.14",
     "vue-global-events": "^1.1.2"
   },
@@ -28,6 +29,8 @@
     "eslint-plugin-vue": "^4.0.0",
     "nodemon": "^1.11.0",
     "prettier": "1.14.3",
+    "sass": "^1.23.7",
+    "sass-loader": "^8.0.0",
     "stylus": "^0.54.7",
     "stylus-loader": "^3.0.2",
     "tailwindcss": "~0.6.6"

@@ -1,3 +1,4 @@
+
 /**
  * This injects Tailwind's base styles, which is a combination of
  * Normalize.css and some additional base styles.
@@ -86,3 +87,9 @@ html, body, #__nuxt, #__layout
 .page-enter, .page-leave-active
     transform translateY(1%)
     opacity .5
+
+
+.bg-image
+        @apply absolute h-full w-full pin-t pin-l
+        object-fit cover
+        object-position center

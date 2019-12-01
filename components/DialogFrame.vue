@@ -46,7 +46,7 @@ export default {
     width 100%
     height 100%
     display flex
-    transition opacity .1s ease
+    transition opacity .2s ease
 
 .dialog
     @apply shadow bg-white text-black
@@ -56,7 +56,7 @@ export default {
     overflow auto
     padding 1em 2em
     border-radius .25em
-    transition all .1s cubic-bezier(.83,1.7,.59,.91)
+    transition all .2s cubic-bezier(.83,1.7,.59,.91)
     transform translateY(0em)
 
 .dialog-enter, .dialog-leave-active

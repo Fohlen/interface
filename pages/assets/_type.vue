@@ -1,29 +1,28 @@
 <template>
     <div class="flex flex-wrap">
         <DialogFrame v-model="showTextureDialog">
-            <img :src="`https://picsum.photos/id/${selectedTexture}/800/800`" class="responsive" alt="">
-        </DialogFrame>
-        <div v-for="texture in textures" :key="texture" class="w-1/5">
-            <div class="bg-gray-darkest cursor-pointer p-2 transition hover:scale m-4 rounded relative" @click="showTexture(texture)">
-                <div class="overflow-hidden relative">
-                    <img :src="`https://picsum.photos/id/${texture}/800/800`" class="responsive" alt="">
-                    <div class="bg-background absolute pin-b pin-l p-2 w-full">
-                        Texture {{ texture }}
-                    </div>
-                </div>
+            <div class="flex justify-center">
+                <img :src="`https://picsum.photos/id/${selectedTexture}/800/800`" class="responsive w-2/3 border-purple border-2" alt="">
+                {{ selectedTexture }}
             </div>
-        </div>
+        </DialogFrame>
+        <ImageCard
+            v-for="texture in textures" :key="texture"
+            :src="`https://picsum.photos/id/${texture}/800/800`" :label="`${$route.params.type} ${texture}`"
+            big class="sm:w-1/2 md:w-1/3 lg:w-1/5" @click.native="showTexture(texture)"
+        >
+        https://picsum.photos/id/{{ texture }}/800/800
+        </ImageCard>
     </div>
 </template>
 
 <script>
 import DialogFrame from '~/components/DialogFrame'
+import ImageCard from '~/components/ImageCard'
 export default {
-    components: { DialogFrame },
+    components: { DialogFrame, ImageCard },
     data: () => ({
-        textures: [
-            2,3,4,5,6
-        ],
+        textures: [...Array(14)].map((i, index) => Math.random() * 400 | 0),
         showTextureDialog: null,
         selectedTexture: null,
     }),
@@ -36,6 +35,7 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="stylus">
+.hexagon
+    clip-path polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 </style>

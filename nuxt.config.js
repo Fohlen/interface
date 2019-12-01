@@ -27,7 +27,9 @@ module.exports = {
     ** Global CSS
     */
     css: [
-        '~/assets/css/main.styl'
+        '~/assets/css/main.styl',
+        '~/assets/css/element-ui.scss',
+        // './node_modules/element-ui/packages/theme-chalk/src/select.scss',
     ],
 
     /*
@@ -41,6 +43,9 @@ module.exports = {
     ** Nuxt.js modules
     */
     modules: [
+        ['nuxt-element-ui', {
+
+        }]
     ],
 
     pageTransition: 'page',
