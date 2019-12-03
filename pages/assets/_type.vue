@@ -7,20 +7,22 @@
             </div>
         </DialogFrame>
         <ImageCard
-            v-for="texture in textures" :key="texture"
-            :src="`https://picsum.photos/id/${texture}/800/800`" :label="`${$route.params.type} ${texture}`"
+            v-for="(texture, key) in images" :key="texture"
+            :src="texture" :label="`${$route.params.type} ${key}`"
             big class="sm:w-1/2 md:w-1/3 lg:w-1/5" @click.native="showTexture(texture)"
-        >
-        https://picsum.photos/id/{{ texture }}/800/800
-        </ImageCard>
+        />
     </div>
 </template>
 
 <script>
 import DialogFrame from '~/components/DialogFrame'
 import ImageCard from '~/components/ImageCard'
+// import axios from 'axios'
 export default {
     components: { DialogFrame, ImageCard },
+    props: {
+        images: Array,
+    },
     data: () => ({
         textures: [...Array(14)].map((i, index) => Math.random() * 400 | 0),
         showTextureDialog: null,
