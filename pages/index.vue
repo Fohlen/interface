@@ -33,6 +33,12 @@
                     Manage textures, maps and models
                 </p>
             </nuxt-link>
+            <nuxt-link class="bg-background no-underline my-2 p-4 text-white transition hover:scale" to="/editor">
+                <h3 class="text-lg mb-2">Dev Tools</h3>
+                <p>
+                    Play with entity system
+                </p>
+            </nuxt-link>
             <nuxt-link class="bg-background no-underline my-2 p-4 text-white transition hover:scale flex" to="/user/login">
                 <UserAvatar v-if="loggedIn" :label="true" :user="{ username: 'Misan', avatar: '' }">
                     <div>10 maps created</div>

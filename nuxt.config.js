@@ -36,7 +36,8 @@ module.exports = {
     ** Plugins to load before mounting the App
     */
     plugins: [
-        '~plugins/globalComponents'
+        '~plugins/globalComponents',
+        '~plugins/polyfill'
     ],
 
     /*
@@ -58,7 +59,9 @@ module.exports = {
         ** You can extend webpack config here
         */
         extend(config, ctx) {
+            console.log(config.module.rules)
             // Run ESLint on save
+
             if (ctx.isDev && ctx.isClient) {
                 config.module.rules.push({
                     enforce: 'pre',
